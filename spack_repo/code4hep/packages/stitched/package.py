@@ -45,6 +45,7 @@ class Stitched(CMakePackage):
     depends_on("gdb", type="run")
 
     version("2026-05-18", commit="45e717a66f9bd50f7734a4863c39687f7946c651")
+    version("2026-05-27", commit="efcfa97330dcf9ab81d58e48c40f7f95fa363510")
 
     variant(
         "cxxstd",
