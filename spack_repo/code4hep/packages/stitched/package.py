@@ -23,7 +23,8 @@ class Stitched(CMakePackage):
     depends_on("cmake@3.23:", type="build")
     depends_on("pkg-config", type="build", when="platform=linux") # needed for util-linux-uuid
 
-    depends_on("boost@1.80.0: +program_options +filesystem +serialization")
+    depends_on("boost@1.80.0: +program_options +filesystem +serialization", when="@:2026-05-27")
+    depends_on("boost@1.80.0: +program_options", when="@2026-05-28:")
     depends_on("intel-tbb@2022.3.0:")
     depends_on("python@3.12.4:")
 
@@ -42,10 +43,12 @@ class Stitched(CMakePackage):
     # Needed for InitRootHandlers (in case of crashes)
     # We could separate the stack tracing logic from InitRootHandlers
     # and make the dependence on gdb optional
-    depends_on("gdb", type="run")
+    # Does not build trivially on MacOS, so enable it just for linux for now
+    depends_on("gdb", type="run", when="platform=linux")
 
     version("2026-05-18", commit="45e717a66f9bd50f7734a4863c39687f7946c651")
     version("2026-05-27", commit="efcfa97330dcf9ab81d58e48c40f7f95fa363510")
+    version("2026-05-28", commit="1f9f7dc0f4e499687b93458f3fbf02ea747b857e")
 
     variant(
         "cxxstd",
