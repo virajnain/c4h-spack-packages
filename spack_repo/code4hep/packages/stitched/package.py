@@ -49,6 +49,7 @@ class Stitched(CMakePackage):
     version("2026-05-18", commit="45e717a66f9bd50f7734a4863c39687f7946c651")
     version("2026-05-27", commit="efcfa97330dcf9ab81d58e48c40f7f95fa363510")
     version("2026-05-28", commit="1f9f7dc0f4e499687b93458f3fbf02ea747b857e")
+    version("2026-06-15", commit="53486de13cecbec085cc992acde3dab968cf88f3")
 
     variant(
         "cxxstd",
