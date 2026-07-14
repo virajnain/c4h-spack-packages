@@ -7,13 +7,14 @@ class Code4hep(CMakePackage):
     homepage = "https://github.com/kpedro88/Code4hep/tree/reorg_cmake2_rebase"
     git = "https://github.com/kpedro88/Code4hep.git"
 
-    #maintainers("virajnain")
+    #maintainers("???")
     #license("???")
+    #version("???")
 
 
-    depends_on("c", type="build") #???
-    depends_on("cxx", type="build") #??? 
-    depends_on("cmake@3.23:", type="build") #???
+    depends_on("c", type="build")
+    depends_on("cxx", type="build")
+    depends_on("cmake@3.23:", type="build")
     depends_on("boost@1.80.0: +program_options", when="@2026-05-28:")
     depends_on("python@3.12.4:")
 
