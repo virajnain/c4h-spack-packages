@@ -24,10 +24,10 @@ class Code4hep(CMakePackage):
     depends_on("python@3:", type=("build", "link"))
 
     depends_on("root +geom +math")
-    depends_on("dd4hep")
+    depends_on("dd4hep +ddg4")
     depends_on("edm4hep@1.0")
     depends_on("podio@1.7")
-    depends_on("geant4@11.5.0.beta")
+    depends_on("geant4@11.5.0.beta +threads +data")
     depends_on("stitched@2026-09-30:", when="@2026-10-09:")
     depends_on("k4geo@00-24")
     depends_on("lcio@2.23.2")
